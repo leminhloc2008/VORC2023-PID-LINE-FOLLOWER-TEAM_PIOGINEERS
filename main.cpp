@@ -55,8 +55,7 @@ uint8_t tspeed_l = tspeed;
 uint8_t vspeed_r = vspeed * 2.5;
 uint8_t tspeed_r = tspeed * 2.5;
 
-int maxSpeed = 255
-;
+int maxSpeed = 255;
 /* ----------------------------*/
 
 /* ----------- Sensor------------*/
@@ -127,7 +126,8 @@ void forwardMovement(int speedA, int speedB) {
     speedB = 0 - speedB;
     ledcWrite(right_motor_channel_a, 0);
     ledcWrite(right_motor_channel_b, speedB);
-  } else {
+  } 
+  else {
     ledcWrite(right_motor_channel_a, speedB);
     ledcWrite(right_motor_channel_b, 0);
   }
@@ -256,7 +256,7 @@ void loop() {
 
     if (sensor[1] <= threshold[1] && sensor[2]<= threshold[2] && sensor[0] <= threshold[0] && sensor[3] <= threshold[3]) {
       forwardMovement(-baseSpeedValue, baseSpeedValue);
-      delay(120);
+      delay(170);
     }
     else {
       getLine();
